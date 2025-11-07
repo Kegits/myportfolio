@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --noinput",
+  "buildCommand": "pip install --no-warn-script-location --disable-pip-version-check -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --noinput",
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
     { "src": "/(.*)", "dest": "api/wsgi.py" }
