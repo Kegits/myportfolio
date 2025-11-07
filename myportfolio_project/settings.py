@@ -53,7 +53,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = "api.wsgi.application"
+WSGI_APPLICATION = "myportfolio_project.wsgi.application"
 
 # Use DATABASE_URL pattern if provided (for Postgres)
 DATABASES = {
