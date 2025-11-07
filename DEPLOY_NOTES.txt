@@ -1,0 +1,8 @@
+Vercel Environment Variables (set these in the Vercel dashboard)
+- SECRET_KEY: (a long random string)
+- DEBUG: False
+- DATABASE_URL: postgres://username:password@host:port/dbname  (if using Postgres)
+- AWS_S3_BUCKET / S3 credentials (optional for media files)
+
+Recommended Postgres providers: Supabase, Neon, Render, ElephantSQL.
+Recommended object storage: AWS S3, DigitalOcean Spaces, or use Vercel's static serving for static assets.

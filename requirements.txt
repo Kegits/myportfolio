@@ -1,0 +1,8 @@
+Django>=4.2
+asgiref
+uvicorn
+gunicorn
+whitenoise
+python-dotenv
+requests
+psycopg[binary]
