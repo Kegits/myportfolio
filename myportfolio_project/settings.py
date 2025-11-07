@@ -55,7 +55,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "myportfolio_project.wsgi.application"
 
-# Use DATABASE_URL pattern if provided (for Postgres)
+import dj_database_url
+
+# Default: use SQLite locally
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -63,11 +65,12 @@ DATABASES = {
     }
 }
 
-# If DATABASE_URL provided, configure for Postgres (simple runtime detection)
+# Use PostgreSQL automatically if DATABASE_URL exists (for Vercel / production)
 DATABASE_URL = os.environ.get("DATABASE_URL")
+
 if DATABASE_URL:
-    import dj_database_url
-    DATABASES["default"] = dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+    DATABASES["default"] = dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
+
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"

@@ -1,7 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput || true",
+  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --noinput",
   "routes": [
-    { "src": "/(.*)", "dest": "myportfolio_project/wsgi.py" }
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/(.*)", "dest": "api/wsgi.py" }
   ]
 }
