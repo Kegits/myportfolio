@@ -18,4 +18,4 @@ def home(request):
         }
 
     }
-    return render(request, "portfolio_app/home.html", context)
+    return render(request, "portfolio_app/index.html", context)
