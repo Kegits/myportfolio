@@ -7,7 +7,6 @@ Included:
 - ASGI entry for Vercel (`api/wsgi.py`)
 - `vercel.json` and `requirements.txt`
 - `.env.example` showing how to configure Postgres and SECRET_KEY
-- `CV.pdf` (copy of the uploaded CV)
 
 ## Prefilled data
 - Name: Kelvin Gakuo
